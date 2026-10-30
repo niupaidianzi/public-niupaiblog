@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我 · 牛排安逸的小屋</title>
+  <link rel="icon" href="images/avatar.webp">
+  <link rel="stylesheet" href="vendor/animate.min.css">
+  <link rel="stylesheet" href="vendor/hover-min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <nav class="navbar glass animate__animated animate__fadeInDown">
+    <a class="nav-logo hvr-underline-from-center" href="index.html">
+      <img src="images/avatar.webp" alt="牛排头像">
+      <span data-i18n>牛排安逸的小屋</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="hvr-pulse-grow" data-i18n>首页</a>
+      <a href="about.html" class="active hvr-pulse-grow" data-i18n>关于我</a>
+      <a href="index.html#posts" class="hvr-pulse-grow" data-i18n>文章</a>
+      <button class="theme-btn" title="切换主题">🌙</button>
+      <button class="lang-btn" title="Switch Language">EN</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="about-hero glass reveal">
+      <img class="cover hvr-grow" src="images/cover.jpeg" alt="牛排的插画">
+      <div class="info">
+        <h2 data-i18n>关于牛排</h2>
+        <p data-i18n>昵称牛排（niupai），一只喜欢 Coding、动漫与摸鱼的猫系开发者，同时也是《我的世界》「牛排纯生存服务器」的服主。</p>
+        <p data-i18n>平时写写 Python、捣鼓 PyQt5 桌面小工具，也玩 ESP32 硬件和 Godot 游戏开发。开服务器、带朋友一起挖矿建房，是我另一种「编程」—— 经营一个安逸的小世界。</p>
+        <p data-i18n>我尤其热爱电子类的东西 —— 电路板、传感器、小屏幕、各种稀奇古怪的电子模块，焊台一坐就是一下午，拆解和点亮一块板子的成就感无可替代。</p>
+        <p data-i18n>这个小屋是我记录技术、生存服日常与生活随笔的地方。</p>
+        <div class="skill-list">
+          <span class="skill hvr-pop">Python</span>
+          <span class="skill hvr-pop">PyQt5</span>
+          <span class="skill hvr-pop">JavaScript</span>
+          <span class="skill hvr-pop">ESP32</span>
+          <span class="skill hvr-pop">Godot 4</span>
+          <span class="skill hvr-pop" data-i18n>前端</span>
+          <span class="skill hvr-pop" data-i18n>二次元</span>
+          <span class="skill hvr-pop" data-i18n>MC 服主</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-hero glass reveal" style="display:block;">
+      <h2 style="margin-bottom:18px;" data-i18n>技能条 📊</h2>
+      <div class="progress-row">
+        <label><span>Python / PyQt5</span><span>90%</span></label>
+        <div class="progress-bar"><i data-width="90%"></i></div>
+      </div>
+      <div class="progress-row">
+        <label><span data-i18n>前端 (HTML/CSS/JS)</span><span>80%</span></label>
+        <div class="progress-bar"><i data-width="80%"></i></div>
+      </div>
+      <div class="progress-row">
+        <label><span data-i18n>嵌入式 (ESP32 / Arduino)</span><span>70%</span></label>
+        <div class="progress-bar"><i data-width="70%"></i></div>
+      </div>
+      <div class="progress-row">
+        <label><span data-i18n>游戏开发 (Godot)</span><span>60%</span></label>
+        <div class="progress-bar"><i data-width="60%"></i></div>
+      </div>
+    </section>
+
+    <section class="about-hero glass reveal" style="display:block;text-align:center;">
+      <h2 style="margin-bottom:14px;" data-i18n>找到我 ✉️</h2>
+      <p style="color:var(--text-light);margin-bottom:20px;" data-i18n>欢迎交流技术、摸鱼心得，或者来我的《我的世界》生存服玩</p>
+
+      <div style="display:inline-flex;align-items:center;gap:14px;padding:16px 28px;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:999px;box-shadow:var(--glass-shadow);">
+        <img src="images/avatar.webp" alt="头像" style="width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);">
+        <div style="text-align:left;">
+          <div style="font-size:0.8rem;color:var(--text-light);" data-i18n>QQ 号（点击可复制）</div>
+          <div id="qq" class="qq-num" style="font-size:1.3rem;font-weight:700;color:var(--accent);cursor:pointer;letter-spacing:1px;">3281414322</div>
+        </div>
+        <button id="copy-qq" class="btn btn-primary hvr-bounce-to-right" style="padding:8px 18px;font-size:0.85rem;" data-i18n>复制</button>
+      </div>
+      <p id="copy-tip" style="margin-top:14px;color:var(--accent);font-size:0.85rem;opacity:0;transition:opacity 0.3s;" data-i18n>✓ 已复制到剪贴板</p>
+
+      <!-- B 站账号 -->
+      <div style="margin-top:36px;padding-top:28px;border-top:1px dashed var(--glass-border);">
+        <h3 style="margin-bottom:10px;" data-i18n>📺 我的 B 站：牛排电子科普</h3>
+        <p style="color:var(--text-light);line-height:1.9;max-width:560px;margin:0 auto 18px;" data-i18n>
+          我是一名电子爱好者，在 B 站分享电路板制作、ESP32 硬件折腾、电子小制作与科普视频。
+          每一个项目从画板、焊接到点亮，都拍成了视频记录。如果你喜欢电子、喜欢动手，
+          点个关注不迷路 —— 你的每一个三连，都是我熬夜焊板子的动力！
+        </p>
+        <a class="btn btn-primary hvr-bounce-to-right" href="https://space.bilibili.com/3546910669408385?spm_id_from=333.40164.0.0" target="_blank" rel="noopener" data-i18n>去 B 站关注我</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="glass">
+    <p data-i18n>牛排安逸的小屋 · Powered by Cloudflare Pages</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

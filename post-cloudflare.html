@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用 Cloudflare Pages 白嫖一个个人博客 · 牛排安逸的小屋</title>
+  <link rel="icon" href="images/avatar.webp">
+  <link rel="stylesheet" href="vendor/animate.min.css">
+  <link rel="stylesheet" href="vendor/hover-min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <nav class="navbar glass animate__animated animate__fadeInDown">
+    <a class="nav-logo hvr-underline-from-center" href="index.html">
+      <img src="images/avatar.webp" alt="牛排头像">
+      <span data-i18n>牛排安逸的小屋</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="hvr-pulse-grow" data-i18n>首页</a>
+      <a href="about.html" class="hvr-pulse-grow" data-i18n>关于我</a>
+      <a href="index.html#posts" class="active hvr-pulse-grow" data-i18n>文章</a>
+      <button class="theme-btn" title="切换主题">🌙</button>
+      <button class="lang-btn" title="Switch Language">EN</button>
+    </div>
+  </nav>
+
+  <article class="article glass reveal">
+    <span class="tag" style="display:inline-block;font-size:0.75rem;color:var(--accent);background:rgba(79,184,181,0.12);padding:3px 12px;border-radius:999px;margin-bottom:12px;" data-i18n>技术笔记</span>
+    <h1 data-i18n>用 Cloudflare Pages 白嫖一个个人博客</h1>
+    <div class="meta" data-i18n>2026-10-12 · 牛排</div>
+
+    <p data-i18n>一直想有个自己的博客，但不想付服务器钱，也不想维护后端。试了一圈之后发现：<strong>静态站 + Cloudflare Pages</strong> 就是白嫖的终极答案。</p>
+
+    <h2 data-i18n>为什么选 Cloudflare Pages？</h2>
+    <p data-i18n>免费额度非常慷慨：无限带宽、无限请求数（Pages 静态托管本身不限量），全球 CDN，自动 HTTPS。对于个人博客这种纯静态场景，基本等于永久免费。</p>
+
+    <blockquote data-i18n>我的策略：所有交互都放在前端 —— 主题切换用 localStorage，访问计数也用 localStorage，完全不碰 Workers，省下每日 10 万次的后端额度留给真正需要的功能。</blockquote>
+
+    <h2 data-i18n>部署只要三步</h2>
+    <pre># 1. 把静态文件推到 GitHub 仓库
+git add . && git commit -m "blog" && git push
+
+# 2. Cloudflare Dashboard → Pages → Connect to Git
+#    构建命令留空（纯静态），输出目录填 /
+
+# 3. 等待 30 秒，拿到 xxx.pages.dev 域名 🎉</pre>
+
+    <h2 data-i18n>踩坑记录</h2>
+    <p data-i18n>单文件不能超过 25MB，图片记得压缩。我用 webp 格式存头像，jpeg 存封面，整站加起来不到 200KB，加载飞快。</p>
+    <p data-i18n>另外注意相对路径要写对，Pages 没有目录索引回退时记得每个目录放 <code>index.html</code>。</p>
+
+    <div style="text-align:center;margin-top:36px;">
+      <a class="btn btn-primary hvr-bounce-to-right" href="index.html" data-i18n>← 返回首页</a>
+    </div>
+  </article>
+
+  <footer class="glass">
+    <p data-i18n>牛排安逸的小屋 · Powered by Cloudflare Pages</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>牛排安逸的小屋 · 首页</title>
+  <meta name="description" content="牛排（niupai）的个人博客 —— 记录技术、生活与小确幸">
+  <link rel="icon" href="images/avatar.webp">
+  <link rel="stylesheet" href="vendor/animate.min.css">
+  <link rel="stylesheet" href="vendor/hover-min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- 导航栏 -->
+  <nav class="navbar glass animate__animated animate__fadeInDown">
+    <a class="nav-logo hvr-underline-from-center" href="index.html">
+      <img src="images/avatar.webp" alt="牛排头像">
+      <span data-i18n>牛排安逸的小屋</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active hvr-pulse-grow" data-i18n>首页</a>
+      <a href="about.html" class="hvr-pulse-grow" data-i18n>关于我</a>
+      <a href="#posts" class="hvr-pulse-grow" data-i18n>文章</a>
+      <button class="theme-btn" title="切换主题">🌙</button>
+      <button class="lang-btn" title="Switch Language">EN</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero glass animate__animated animate__fadeInUp">
+    <div class="hero-avatar">
+      <img src="images/avatar.webp" alt="牛排的头像">
+      <span class="badge">niupai</span>
+    </div>
+    <div>
+      <h1 data-i18n>你好，我是 <span>牛排</span></h1>
+      <p id="typer" style="min-height:1.6em;font-size:1.05rem;"></p>
+    </div>
+  </header>
+
+  <!-- 文章列表 -->
+  <main class="container">
+    <h2 class="section-title" id="posts" data-i18n>📝 最近的文章</h2>
+    <div class="grid">
+      <a class="card glass card-pinned reveal hvr-wobble-horizontal" href="post-mc.html">
+        <span class="tag tag-pin" data-i18n>📌 置顶 · 我的世界</span>
+        <h3 data-i18n>「牛排纯生存服务器」开服啦，欢迎来玩！</h3>
+        <p data-i18n>Java / 基岩多端互通，1.21.7 ~ 26.2 任意版本都能进。扫码加 QQ 群，一起挖矿、建房、打末影龙！</p>
+        <div class="meta"><span>2026-10-17</span><span>👉 play.simpfun.cn:33255</span></div>
+      </a>
+      <a class="card glass reveal hvr-wobble-horizontal" href="post-cloudflare.html">
+        <span class="tag" data-i18n>技术笔记</span>
+        <h3 data-i18n>用 Cloudflare Pages 白嫖一个个人博客</h3>
+        <p data-i18n>零成本、零后端、全球 CDN 加速。分享把静态博客部署上 Cloudflare Pages 的全过程与踩坑记录。</p>
+        <div class="meta"><span>2026-10-12</span></div>
+      </a>
+      <a class="card glass reveal hvr-wobble-horizontal" href="post-glass.html">
+        <span class="tag" data-i18n>前端设计</span>
+        <h3 data-i18n>雾玻璃 Glassmorphism 实践手记</h3>
+        <p data-i18n>backdrop-filter 的魔法参数怎么调？深色模式如何兼容？这个小屋的样式就是这么写出来的。</p>
+        <div class="meta"><span>2026-10-05</span></div>
+      </a>
+      <a class="card glass reveal hvr-wobble-horizontal" href="post-cat.html">
+        <span class="tag" data-i18n>生活随笔</span>
+        <h3 data-i18n>猫系程序员的安逸周末</h3>
+        <p data-i18n>睡到自然醒，写一点代码，撸一会儿猫。程序员的周末不只有 Debug，还有阳光和呼噜声。</p>
+        <div class="meta"><span>2026-09-28</span></div>
+      </a>
+    </div>
+
+    <!-- 箴言（横排打字机） -->
+    <section class="quote-box glass reveal">
+      <h2 class="quote-title" data-i18n>📜 箴言</h2>
+      <div class="quote-line" id="quote"></div>
+      <p class="quote-copy-hint" id="quote-copy" data-i18n>点击复制当前箴言</p>
+    </section>
+  </main>
+
+  <footer class="glass animate__animated animate__fadeIn">
+    <p data-i18n>牛排安逸的小屋 · Powered by Cloudflare Pages</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雾玻璃 Glassmorphism 实践手记 · 牛排安逸的小屋</title>
+  <link rel="icon" href="images/avatar.webp">
+  <link rel="stylesheet" href="vendor/animate.min.css">
+  <link rel="stylesheet" href="vendor/hover-min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <nav class="navbar glass animate__animated animate__fadeInDown">
+    <a class="nav-logo hvr-underline-from-center" href="index.html">
+      <img src="images/avatar.webp" alt="牛排头像">
+      <span data-i18n>牛排安逸的小屋</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="hvr-pulse-grow" data-i18n>首页</a>
+      <a href="about.html" class="hvr-pulse-grow" data-i18n>关于我</a>
+      <a href="index.html#posts" class="active hvr-pulse-grow" data-i18n>文章</a>
+      <button class="theme-btn" title="切换主题">🌙</button>
+      <button class="lang-btn" title="Switch Language">EN</button>
+    </div>
+  </nav>
+
+  <article class="article glass reveal">
+    <span class="tag" style="display:inline-block;font-size:0.75rem;color:var(--accent);background:rgba(79,184,181,0.12);padding:3px 12px;border-radius:999px;margin-bottom:12px;" data-i18n>前端设计</span>
+    <h1 data-i18n>雾玻璃 Glassmorphism 实践手记</h1>
+    <div class="meta" data-i18n>2026-10-05 · 牛排</div>
+
+    <p data-i18n>你现在看到的小屋，就是雾玻璃风格。磨砂、半透明、背后有彩色光斑在飘 —— 好看又好写。</p>
+
+    <h2 data-i18n>核心就三行 CSS</h2>
+    <pre>.glass {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+}</pre>
+
+    <p data-i18n><code>blur()</code> 决定磨砂程度，<code>saturate()</code> 让透出来的颜色更鲜艳。加上半透明白边，玻璃质感一下就出来了。</p>
+
+    <blockquote data-i18n>小技巧：背景一定要是渐变或彩色光斑，纯白背景是看不出雾玻璃效果的。</blockquote>
+
+    <h2 data-i18n>深色模式怎么兼容</h2>
+    <p data-i18n>用 CSS 变量切换 <code>--glass-bg</code> 和 <code>--glass-border</code>，深色下把背景换成半透明深色、边框透明度调低即可，一行 JS 切换 <code>data-theme</code> 属性就够了。</p>
+
+    <h2 data-i18n>配合动画库</h2>
+    <p data-i18n>入场用 Animate.css 的 <code>fadeInUp</code>，悬停用 Hover.css 的 <code>hvr-bounce-to-right</code>、<code>hvr-wobble-horizontal</code>，组件风格参考 UIverse 的按钮和进度条 —— 全部是现成的 CSS，零 JS 成本。</p>
+
+    <div style="text-align:center;margin-top:36px;">
+      <a class="btn btn-primary hvr-bounce-to-right" href="index.html" data-i18n>← 返回首页</a>
+    </div>
+  </article>
+
+  <footer class="glass">
+    <p data-i18n>牛排安逸的小屋 · Powered by Cloudflare Pages</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
